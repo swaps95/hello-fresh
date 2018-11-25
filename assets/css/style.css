@@ -1,0 +1,1159 @@
+@charset "utf-8";
+
+/*------------------------------------------------------------------
+  [Table of contents]
+  1. CSS Reset Code
+    1.1. Eric Meyers Reset/HTML5 display-role reset for older browsers
+    1.2. Clear Fix
+    1.3. Font class declaration
+  2.Common Styling
+  3. Header 
+    3.1 Logo  
+    3.2 Navigation / menu
+  4. Main
+    4.1. Banner section
+    4.2. Work section
+    4.3. Inside-box section
+    4.4. Classic-plan section
+    4.5. Hello-fresh section
+    4.6. Order-now section
+    4.7. Subscribe section
+  5. Footer / .footer
+  6. Media Query
+    6.1. Media-query at 1200px
+    6.2. Media-query at 1000px ( Remove hover effects )
+    6.3. Media-query at 750px
+    6.4. Media-query at 550px
+  ------------------------------------------------------------------*/
+
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+html { overflow-y: scroll; }
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+/* 1.2. Clear Fix
+ ========================================================================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
+
+/* 1.3. Font declaration
+ ========================================================================== */
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../vendor/webfonts/Montserrat/Montserrat-Regular.ttf");
+}
+
+/* ==========================================================================
+ 2.Common Styling
+ ========================================================================== */
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container { width: 100%; }
+
+.wrapper {
+  max-width: 1500px;
+  width: 83%;
+  margin: 0 auto;
+}
+
+.fas { padding-right: 5px; }
+body { font-family: Arial; }
+ul li { list-style: none; }
+img { width: 100%; }
+.uppercase { text-transform: uppercase; }
+.capitalize { text-transform: capitalize; }
+.first-letter:first-letter { text-transform: capitalize; }
+.block { display: block; }
+.centre { text-align: center; }
+
+/*----------------Display inline block--------------*/
+.terms,
+.links,
+.terms li,
+.social-icon li,
+.subscribe .submit,
+.subscribe .form-group,
+.quality li,
+.recipe-detail,
+.plan-list li,
+.works li { 
+  display: inline-block;
+  vertical-align: top;
+}
+
+/*--------------------Apply transition----------------*/
+.main a,
+.get-start a,
+.login a,
+.terms a,
+.social-icon a,
+.hello-fresh .follow,
+.sub-link a,
+.submit,
+.footer-top .app,
+.order-now a,
+.fresh-item a,
+.classic-plan .cooking,
+.plan-list a,
+.works a,
+.my-plans a,
+.down-arrow a,
+.banner-text a {
+  -webkit-transition: all 0.5s ease-in-out;
+     -moz-transition: all 0.5s ease-in-out; 
+      -ms-transition: all 0.5s ease-in-out;  
+       -o-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out;
+}
+
+a { 
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+ 3.Header
+========================================================================== */
+header { 
+  width: 100%;
+  padding-bottom: 5px;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  background-color: #fff;
+  -webkit-box-shadow: 1px 1px 2px #aaa;
+     -moz-box-shadow: 1px 1px 2px #aaa; 
+      -ms-box-shadow: 1px 1px 2px #aaa;
+       -o-box-shadow: 1px 1px 2px #aaa;
+          box-shadow: 1px 1px 2px #aaa;
+}
+
+header .wrapper { 
+  width: 98%; 
+  position: relative;
+}
+
+/* 3.1. Logo
+ ========================================================================== */
+h1 {
+  width: 5.5%;
+  position: absolute;
+  top: 15px;
+  left: 10px;
+}
+
+.sub-menu,
+.hamburger,
+.inactive { display: none; }
+
+/* 3.2. Navigation
+ ========================================================================== */
+
+/*-----------------------Styling of nav menu-----------------------*/
+nav .main { float: left; }
+
+nav a {
+  color: #343434;
+  font: 400 14px sans-serif;
+}
+
+.angle::after {
+  padding-left: 4px;
+  content: '\f107';
+  font: 900 10px 'Font Awesome 5 Free';
+}
+
+.main a { padding: 14px; }
+
+.main a:hover { color: #91c11e; }
+
+.menu { 
+  width: 70%;
+  padding-left: 7%; 
+  margin: 7px 0;
+}
+
+.sub-menu li { float: none; }
+
+.main:hover .sub-menu {
+  display: block;
+  position: absolute;
+  top: 40px;
+}
+
+.sub-menu li {
+  border-bottom: 2px solid #91c11e;
+  background-color: #fff;
+}
+
+.sub-menu a { padding: 15px; }
+
+/*-----------------Styling of get started button----------------------*/
+.get-start { 
+  position: absolute; 
+  top: 10px;
+  right: 10%;
+}
+
+.get-start a {
+  padding: 7px 22px;
+  border: 1px solid #91c11e;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+       -o-border-radius: 3px;
+          border-radius: 3px;
+  color: #91c11e;
+  font: 400 14px 'Montserrat', sans-serif;
+}
+
+.get-start a:hover {
+  background-color: #91c11e;
+  color: #fff;
+}
+
+/*---------------------Styling of login button-----------------------*/
+
+.login { 
+  position: absolute;
+  top: 20px;
+  right: 3%;
+}
+
+.login a {
+  color: #91c11e;
+  font: 400 14px sans-serif;
+}
+
+.login a:hover { color: #44631b; }
+
+
+/* ==========================================================================
+ 4.Main
+========================================================================== */
+ 
+/* 4.1. Banner
+ ========================================================================== */
+.banner {
+  height: 100vh;
+  margin-top: 55px;
+  position: relative;
+  background: url('../images/banner.png') no-repeat center/0 0;
+  background-size: cover;
+}
+
+/*-------------------Styling of text of banner----------------- */
+.banner-text {
+  width: 35%;
+  position: absolute;
+  top: 29%;
+  left: 50%;
+  text-align: center;
+  -webkit-transform: translate(-50%,-50%);
+     -moz-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+       -o-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+
+h2 {
+  color: #343434;
+  font: 600 47px 'Montserrat', sans-serif;
+  line-height: 57px;
+}
+
+.banner p {
+  width: 74%;
+  padding-bottom: 15px;
+  margin: 0 auto;
+  color: #343434;
+  font: 400 17px sans-serif;
+  line-height: 26px;
+}
+
+/*------Styling of ordernow button + same styling buttons-------*/
+.order-now a,
+.classic-plan .cooking,
+.my-plans a,
+.banner-text a {
+  padding: 12px 26px;
+  border: 1px solid transparent;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+       -o-border-radius: 3px;
+          border-radius: 3px;
+  background-color: #9bbe43;
+  color: #fff;
+  font: 600 13px 'Montserrat', sans-serif;
+}
+
+.order-now a:hover,
+.classic-plan .cooking:hover,
+.my-plans a:hover,
+.banner-text a:hover {
+  border-color: #9bbe43;
+  background-color: #fff; 
+  color: #9bbe43;
+}
+
+/*-------------Styling of arrow down is here-------------------*/
+.down-arrow {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+     -moz-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+       -o-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+
+.down-arrow a {
+  padding: 15px 18px;
+  -webkit-border-radius: 25px;
+     -moz-border-radius: 25px;
+      -ms-border-radius: 25px;
+       -o-border-radius: 25px;
+          border-radius: 25px;
+  background-color: #fff;
+  color: #9bbe43;
+  font-size: 18px;
+  text-align: center;
+}
+
+.down-arrow a:hover { 
+  color: #44631b;
+  -webkit-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg); 
+}
+
+/* 4.2. Work section
+ ========================================================================== */
+
+/*------------Styling of work section start here--------------*/
+.works { 
+  padding: 25px 0 50px;
+  background-color: #f8f8f8; 
+  text-align: center;
+}
+
+.works .wrapper { width: 72%; }
+
+h3 {
+  color: #343434;
+  font: 600 30px 'Montserrat', sans-serif;
+  line-height: 38px;
+}
+
+/*------------In work section styling of li is here------------*/
+.works li {
+  width: 25%;
+  padding: 30px 0 40px;
+  margin-left: -5px;
+  color: #343434;
+}
+
+.image-wrapper { 
+  width: 48%;
+  margin: 0 auto; 
+}
+
+.works h4 { 
+  padding: 18px 0 10px;
+  font: 600 15px sans-serif;
+  letter-spacing: -.3px;
+}
+
+.works p { 
+  width: 90%;
+  margin: 0 auto;
+  font: 400 14px sans-serif; 
+}
+
+/*----------------Styling of learn more button-----------------*/
+.works a {
+  padding: 13px 26px;
+  border: 1px solid #91c11e;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+       -o-border-radius: 3px;
+          border-radius: 3px;
+  background-color: #fff;
+  color: #9bbe43;
+  font: 600 13px 'Montserrat', sans-serif;
+}
+
+.works a:hover {
+  background-color: #9bbe43;
+  color: #fff;
+}
+
+/* 4.3. Inside-box section
+ ========================================================================== */
+
+/*----------------Styling of inside-box start here--------------*/
+
+.inside-box {
+  background: url('../images/what-you-get_2560x450.png') no-repeat center/0 0;
+  background-size: cover;
+}
+
+/*-------------In inside-box styling of plans start-------------*/
+.my-plans {
+  width: 42%;
+  padding: 53px 35px 70px;
+  margin-left: 58%;
+  background-color: #fff;
+  text-align: center;
+}
+
+.my-plans ul { 
+  padding: 14px 0 23px; 
+  text-align: left;
+}
+
+.my-plans h3 { 
+  width: 90%; 
+  font-size: 28px;
+}
+
+.my-plans p {
+  width: 92%;
+  margin-left: -5px;
+  display: inline-block;
+  color: #343434;
+  font: 400 14px sans-serif; 
+  line-height: 28px;
+}
+
+/*------------------Add + symbol before p tag------------------*/
+.my-plans li::before {
+  width: 7%;
+  display: inline-block;
+  color: #9ec048;
+  content: '+';
+  font-size: 25px;
+  vertical-align: top;
+}
+
+/* 4.4. Classic-plan section
+ ========================================================================== */
+
+/*------------Styling of classic-plan start from here------------*/
+.classic-plan { 
+  padding: 48px 0;
+  background-color: #f8f8f8; 
+  text-align: center;
+}
+
+.classic-plan h3 { font: 600 22px 'Montserrat', sans-serif; }
+
+/*--------Styling of inside classic plan ul='plan-list' -----------*/
+.plan-list { margin: 20px 0; }
+
+.plan-list li { margin-left: -5px; }
+
+.plan-list a {
+  padding: 9px 15px;
+  border: 1px solid #eceae6;
+  border-right: none;
+  background-color: #fff;
+  color: #7a7975;
+  font: 400 12px sans-serif;
+}
+
+.plan-list li:last-child a { border-right: 1px solid #eceae6; }
+
+.plan-list a:hover { background-color: #ddd; }
+
+/*----------When use tab-function active class styling-----------*/
+.active { 
+  background-color: #9bbe43;
+  color: #fff;
+}
+
+/*--------------Styling of next ul='plans-item'------------------*/
+.plans-items { 
+  margin: 38px 0 33px; 
+  position: relative;
+}
+
+.classic { display: block; }
+
+.recipe-detail {
+  width: 32%;
+  margin: 0 2% 0 -5px;
+  background-color: #fff;
+  -webkit-box-shadow: .5px .5px .5px #ddd;
+     -moz-box-shadow: .5px .5px .5px #ddd;
+      -ms-box-shadow: .5px .5px .5px #ddd;
+       -o-box-shadow: .5px .5px .5px #ddd;
+          box-shadow: .5px .5px .5px #ddd;
+}
+
+.recipe-info {  
+  padding: 19px 9px; 
+  text-align: left;
+}
+
+.recipe-info h4
+.classic-plan p { color: #343434; }
+
+.classic-plan p { font: 400 15px sans-serif; }
+
+.recipe-info h4 { font: 600 16px 'Montserrat', sans-serif; }
+
+.recipe-info p { 
+  padding: 20px 0 50px;
+  font-size: 14px; 
+}
+
+.quality li:first-child span {
+  padding: 5px 12px 5px 0;
+  border-right: 1px solid #ebebeb;
+  color: #000;
+  font: 600 14px sans-serif;
+}
+
+.quality li:last-child span {
+  padding-left: 10px;
+  color: #999;
+  font: 400 13px sans-serif;
+}
+
+/*--------------Styling for last li of plans-item----------------*/
+.third-recipe { margin-right: 0; }
+
+.third-recipe .hall {
+  padding: 5px;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+       -o-border-radius: 3px;
+          border-radius: 3px;
+  background-color: #e6ac5c;
+  color: #fff;
+  font: 600 11px sans-serif;
+}
+
+.third-recipe h4 { padding-top: 13px; } 
+
+.third-recipe p { padding-bottom: 20px; }
+
+/* 4.5. Hello-fresh section
+ ========================================================================== */
+
+/*----------------Styling of hello-fresh start here--------------*/
+.hello-fresh {
+  padding: 55px 0 40px;
+  background-color: #f8f8f8; 
+}
+
+.hello-fresh h3 { text-align: center; }
+
+/*-----------------Styling of ul inside hello-fresh--------------*/
+.fresh-item { padding: 25px 0; }
+
+.fresh-item li {
+  width: 23%;
+  margin: 0 2.8% 30px -5px;
+  float: left;
+}
+
+.fresh-item .fresh { margin-right: 0; }
+
+.fresh-item a:hover { 
+  -webkit-filter: sepia(50%);
+     -moz-filter: sepia(50%);
+      -ms-filter: sepia(50%);
+       -o-filter: sepia(50%);
+          filter: sepia(50%);
+}
+
+.hello-fresh p {
+  color: #353334;
+  font: 600 18px 'Montserrat', sans-serif;
+  text-align: center; 
+}
+
+/*------------------ Styling of link for instagram ---------------*/
+.hello-fresh .follow {
+  padding-bottom: 3px;
+  border-bottom: 2px solid  transparent;
+  color: #659a41;
+  font: 600 20px 'Montserrat', sans-serif;
+}
+
+.hello-fresh .follow:hover { border-bottom: 2px solid #659a41; }
+
+
+/* 4.6. Order-now section
+ ========================================================================== */
+.order-now {
+  background: url('../images/LC_HomepageBanners_Tablet_R2.png') no-repeat 0 0;
+  background-size: cover;
+}
+
+.order-text { 
+  padding: 110px 0 40px; 
+  text-align: center;
+}
+
+.order-now p {
+  margin: 38px 0 25px;
+  color: #343434;
+  font: 400 18px sans-serif;
+}
+
+/* 4.7. Subscribe section
+ ========================================================================== */
+
+/*-----------------Styling of subscribe section-----------------*/
+.subscribe {
+  padding: 31px 0 27px;
+  border-bottom: 1px solid #ddd;
+  background-color: #f8f8f8; 
+  text-align: center;
+}
+
+.subscribe p {
+  padding: 16px 0 12px;
+  color: #343434;
+  font: 400 15px sans-serif;
+}
+
+.subscribe h4 {
+  color: #343434;
+  font: 600 20px 'Montserrat', sans-serif;
+}
+
+/*--------------Styling of input type email---------------------*/
+.form-group { width: 30.5%; }
+
+.subscribe .form-control {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #bebebe; 
+  font: 400 14px sans-serif;
+  outline: none;
+}
+
+/*----------------Styling of subscribe button-------------------*/
+.submit {
+  padding: 11px 25px;
+  border: none;
+  margin-left: -5px;
+  background-color: #9bbe43;
+  color: #fff;
+  font: 400 14px sans-serif;
+  opacity: .4;
+  outline: none;
+}
+
+.submit:hover { opacity: 1; }
+
+ /* ==========================================================================
+ 5.Footer
+========================================================================== */
+
+/*---------------Styling of footer-top start here---------------*/
+.footer-top { 
+  padding: 46px 0 40px; 
+  border-bottom: 1px solid #ddd;
+}
+
+.footer-top .app {
+  padding: 12px 22px;
+  border: 1px solid #91c11e;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+       -o-border-radius: 3px;
+          border-radius: 3px;
+  margin-top: 9px;
+  float: right;
+  color: #91c11e;
+  font: 600 12px 'Montserrat', sans-serif;
+  letter-spacing: .5px;
+}
+
+.footer-top .app:hover {
+  background-color: #91c11e;
+  color: #fff;
+}
+
+/*----------------Styling of footer-link----------------------- */
+
+.footer-link h5 {
+  color: #91c11e;
+  font: 600 11px sans-serif;
+  line-height: 35px;
+}
+
+.sub-link a {
+  border-bottom: 2px solid transparent;
+  margin-bottom: 4px;
+  color: #343434;
+  font: 400 12px sans-serif;
+  line-height: 10px;
+} 
+
+.sub-link a:hover { 
+  border-bottom: 2px solid #91c11e; 
+  color: #000;
+}
+
+.links { 
+  width: 17%; 
+  vertical-align: top;
+}
+
+/*---------------Styling of footer-bottom start here--------------*/
+.footer-bottom { padding: 20px 0; }
+
+.footer-bottom span {
+  margin-top: 10px;
+  float: left; 
+  color: #b8b8b8;
+  font: 400 12px sans-serif;
+}
+
+/*-----------------------Styling of social icons----------------*/
+.social-icon { float: right; }
+
+.social-icon a {
+  padding: 8px;
+  color: #9bbe43;
+  font-size: 25px;
+}
+
+.social-icon a:hover { 
+  -webkit-transform: rotate(360deg); 
+     -moz-transform: rotate(360deg); 
+      -ms-transform: rotate(360deg); 
+       -o-transform: rotate(360deg); 
+          transform: rotate(360deg); 
+}
+/*-------------------Styling of trems link----------------------*/
+.terms { margin-left: 10px;}
+
+.terms a {
+  padding: 11px 10px 8px;
+  color: #8d8d8d;
+  font: 400 12px sans-serif;
+}
+
+.terms li:first-child::after {
+  color: #8d8d8d;
+  content: '|';
+}
+
+.terms a:hover { color: #91c11e; }
+
+/* ==========================================================================
+ 6.Media Query
+========================================================================== */
+
+/* 6.1. Media Query at Max-width 1200px
+ ========================================================================== */
+@media screen and (max-width: 1200px) {
+
+.banner { height: 80vh; }
+
+.banner-text { 
+  width: 60%;
+  top: 40%; 
+}
+
+h2 { font-size: 40px; }
+
+.my-plans h3,
+h3 { font-size: 22px; }
+
+.works li { width: 50%; }
+
+.works a { width: 40%; }
+
+.works h4 { font-size: 18px; }
+
+.works p { font-size: 16px; }
+
+.my-plans {
+  width: 57%;
+  margin-left: 43%;
+}
+
+.recipe-info p { font-size: 12px; }
+
+.my-plans p { font-size: 16px; }
+
+.quality li:first-child span { display: none; }
+
+.links { width: 23%; }
+
+.plan-list a,
+.footer-bottom span,
+.terms a { font-size: 14px; }
+
+.recipe-info h4,
+.footer-link h5,
+.sub-link a { font-size: 13px; }
+
+.form-group { width: 40%; }
+
+}
+
+/* 6.2. Media Query at Max-width 1000px ( Remove Hover Effects )
+ ========================================================================== */
+@media screen and (max-width: 1000px) {
+
+.main a:hover { color: #343434; }
+
+.main:hover .sub-menu { display: none; }
+
+.get-start a:hover {
+  background-color: #fff;
+  color: #91c11e;
+}
+
+.login a:hover { color: #91c11e; }
+
+.order-now a:hover,
+.classic-plan .cooking:hover,
+.my-plans a:hover,
+.banner-text a:hover {
+  border-color: transparent;
+  background-color: #9bbe43; 
+  color: #fff;
+}
+
+.down-arrow a:hover { 
+  color: #9bbe43;
+  -webkit-transform: rotate(0deg);
+     -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+       -o-transform: rotate(0deg);
+          transform: rotate(0deg); 
+}
+
+.works a:hover {
+  background-color: #fff;
+  color: #9bbe43;
+}
+
+.plan-list a:hover { background-color: #fff; }
+
+.fresh-item a:hover { 
+  -webkit-transform: scale(1);
+     -moz-transform: scale(1);
+      -ms-transform: scale(1);
+       -o-transform: scale(1);
+          transform: scale(1); 
+}
+
+.hello-fresh .follow:hover { border-bottom: 2px solid transparent; }
+
+.submit:hover { opacity: .4; }
+
+.footer-top .app:hover {
+  background-color: #fff;
+  color: #91c11e;
+}
+
+.sub-link a:hover { 
+  border-bottom: 2px solid transparent; 
+  color: #343434;
+}
+
+.social-icon a:hover { 
+  -webkit-transform: rotate(0deg); 
+     -moz-transform: rotate(0deg); 
+      -ms-transform: rotate(0deg); 
+       -o-transform: rotate(0deg); 
+          transform: rotate(0deg); 
+}
+
+.terms a:hover { color: #8d8d8d; }
+}
+
+/* 6.3. Media Query at Max-width 750px 
+ ========================================================================== */
+
+@media screen and (max-width: 750px) {
+
+h1 img { display: none; }
+
+.login { top: 40%; }
+
+.login a { font: 600 18px sans-serif; }
+
+h1 { 
+  width: 25%;
+  height: 35px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-image: url('https://via.placeholder.com/350x150'); 
+  -webkit-transform: translate(-50%,-50%);
+     -moz-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+       -o-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+
+/*------------------Styling of hamburger in max width 750px------------*/
+.get-start,
+.menu nav { display: none; }
+
+.menu { padding-left: 0; }
+
+.hamburger { 
+  padding: 10px;
+  display: inline-block; 
+  color: #4c4c4c;
+  font-size: 35px;
+}
+
+nav .main { float: none; }
+
+nav {
+  width: 65%;
+  padding: 50px 0 130px 20px;
+  display: block;
+  position: fixed;
+  left: 0;
+  background-color: #fff;
+}
+
+nav li { display: block; }
+
+nav .inactive { 
+  padding: 13px;
+  display: block; 
+}
+
+/*------------Remove symbol and add another icon in mobile view------------*/
+
+.main-menu .main:last-child { display: none; }
+
+.main-menu .main:nth-child(2) .sub-menu { 
+  border-bottom: none;
+  display: block; 
+  position: absolute;
+  top: 100%;
+}
+
+.main-menu { position: relative; }
+
+.sub-menu { width: 100%; }
+
+.sub-menu li { border-bottom: none; }
+
+.main-menu li:nth-child(4) { border-top: 1px solid #ccc; }
+
+.main-menu li:nth-child(5) { border-bottom: 1px solid #ccc; }
+
+.angle::after { content: none; }
+
+.main-menu .main:nth-child(3)::before,
+.main-menu .main:nth-child(2)::before,
+.main-menu .main:nth-child(1)::before { 
+  color: #343434;
+  font: 900 18px 'Font Awesome 5 Free';
+}
+
+.main-menu .main:nth-child(1)::before { content: '\f274'; }
+
+.main-menu .main:nth-child(2)::before { content: '\f059'; }
+
+.main-menu .main:nth-child(3)::before { content: '\f15c'; }
+
+.get-start { 
+  z-index: 1000;
+  top: 70px; 
+  left: 0;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.banner-text { width: 80%; }
+
+/*-------------------------Styling of work section-----------------------*/
+
+.works-list .image-wrapper { float: left;}
+
+.works-list li { width: 100%; }
+
+.works-list .content-wrap { text-align: left; }
+
+.works-list .image-wrapper { 
+  width: 20%; 
+  margin-right: 5%;
+}
+
+/*.recipe-detail { width: 50%; }*/
+
+.my-plans {
+  width: 100%;
+  margin-left: 0;
+  opacity: .9;
+}
+
+.hello-fresh { padding: 0; }
+
+.fresh-item li { width: 48%; }
+
+.form-group { width: 55%; }
+
+.submit { padding: 11px 40px; }
+
+/*-------------------In max-width 750px styling of footer--------------------*/
+
+.footer-top .app { 
+  width: 50%;
+  margin: 0 auto 20px;
+  display: block;
+  float: none; 
+  text-align: center;
+}
+
+.footer-link { 
+  width: 100%; 
+  text-align: center;
+}
+
+.links { width: 30%; }
+
+.sub-link li { margin-bottom: 10px; }
+
+h5 { padding-bottom: 10px; }
+
+footer span,
+.terms,
+.social-icon { 
+  width: 100%; 
+  padding-bottom: 18px;
+  text-align: center;
+}
+}
+
+/* 6.4. Media Query at Max-width 550px 
+ ========================================================================== */
+
+@media screen and (max-width: 550px) {
+.works h4 { font-size: 14px; }
+
+.works p { font-size: 12px; }
+
+.works-list .content-wrap { text-align: center; }
+
+.works a {
+  width: 60%;
+  font-size: 12px;
+}
+
+.inside-box { 
+  padding-top: 200px; 
+  background-position: 25% 100%;
+}
+
+.hello-fresh p { padding: 20px; } 
+
+.footer-top { padding: 0; }
+
+.form-group { width: 62%; }
+
+.submit {
+  padding: 12px 14px;
+  font-size: 12px;
+}
+
+.footer-top .wrapper { width: 100%; }
+
+.footer-top .app { 
+  width: 60%;
+  margin-top: 50px; 
+}
+
+.sub-link { display: none; }
+
+.inside-box .wrapper { width: 100%; }
+
+.links { width: 100%; }
+
+h5 { 
+  padding: 10px 20px;
+  border-top: 1px solid #ddd; 
+  text-align: left;
+}
+
+h5::after {
+  float: right;
+  color: #9bbe43;
+  content: '+';
+  font-size: 20px;
+  vertical-align: middle;
+}
+}
